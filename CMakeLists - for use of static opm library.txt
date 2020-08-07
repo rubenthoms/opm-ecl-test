@@ -1,0 +1,10 @@
+project(TestEclFile)
+cmake_minimum_required(VERSION 2.8)
+
+find_library(libopmcommon libopmcommon.a PATHS /home/ruben/repos/build/opm-common/install/lib)
+
+include_directories(/home/ruben/repos/build/opm-common/install/include)
+link_directories(/home/ruben/repos/build/opm-common/install/lib)
+
+ADD_EXECUTABLE(TestEclFile test-eclfile.cpp)
+target_link_libraries(TestEclFile ${libopmcommon})
